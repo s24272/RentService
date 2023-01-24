@@ -3,7 +3,7 @@ package com.example.VideoRent.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
-
+@Table
 @Entity
 public class VideoCasset {
 

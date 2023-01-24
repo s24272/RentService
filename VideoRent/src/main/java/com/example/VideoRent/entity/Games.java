@@ -4,8 +4,8 @@ import com.example.VideoRent.enums.GameType;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
+@Table
 @Entity
 public class Games {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +17,7 @@ public class Games {
     private GameType type;
     @Column 
     private LocalDate productionData;
+
 
     public Games() {
     }
