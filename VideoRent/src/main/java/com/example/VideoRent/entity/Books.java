@@ -1,34 +1,32 @@
 package com.example.VideoRent.entity;
 
-import com.example.VideoRent.enums.GameType;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
 @Table
 @Entity
-public class Games {
+public class Books {
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int id;
     @Column
-    private String name;
+    private String title;
     @Column
-    private GameType type;
-    @Column 
+    private String author;
+    @Column
     private LocalDate productionData;
 
-
-    public Games() {
+    public Books() {
     }
 
-    public Games(int id, String name, GameType type, LocalDate productionData) {
+    public Books(int id, String title, String author, LocalDate productionData) {
         this.id = id;
-        this.name = name;
-        this.type = type;
+        this.title = title;
+        this.author = author;
         this.productionData = productionData;
     }
-
 
     public int getId() {
         return id;
@@ -38,20 +36,20 @@ public class Games {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public GameType getType() {
-        return type;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setType(GameType type) {
-        this.type = type;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public LocalDate getProductionData() {

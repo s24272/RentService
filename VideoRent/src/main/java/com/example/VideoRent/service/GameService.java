@@ -2,7 +2,6 @@ package com.example.VideoRent.service;
 
 import com.example.VideoRent.data.GameRepository;
 import com.example.VideoRent.entity.Games;
-import com.example.VideoRent.entity.VideoCasset;
 import com.example.VideoRent.enums.GameType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -10,7 +9,6 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service

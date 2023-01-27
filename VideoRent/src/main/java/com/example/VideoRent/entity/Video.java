@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 @Table
 @Entity
-public class VideoCasset {
+public class Video {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -15,10 +15,10 @@ public class VideoCasset {
     @Column
     private LocalDate productionYear;
 
-    public VideoCasset() {
+    public Video() {
     }
 
-    public VideoCasset(int id, String title, LocalDate productionYear) {
+    public Video(int id, String title, LocalDate productionYear) {
         this.id = id;
         this.title = title;
         this.productionYear = productionYear;

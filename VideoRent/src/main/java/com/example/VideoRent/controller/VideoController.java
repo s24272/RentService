@@ -1,6 +1,6 @@
 package com.example.VideoRent.controller;
 
-import com.example.VideoRent.entity.VideoCasset;
+import com.example.VideoRent.entity.Video;
 import com.example.VideoRent.service.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,22 +19,22 @@ public class VideoController {
     }
 
     @GetMapping("/all")
-    public Iterable<VideoCasset> getAll(){
+    public Iterable<Video> getAll(){
         return  service.findAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<VideoCasset> getId(@RequestParam int id){
+    public Optional<Video> getId(@RequestParam int id){
        return service.find(id);
     }
 
     @PostMapping("/add")
-    public VideoCasset addVideo(@RequestBody VideoCasset videoCasset){
+    public Video addVideo(@RequestBody Video videoCasset){
         return service.save(videoCasset);
     }
 
     @PutMapping("/add")
-    public VideoCasset updateVideo(@RequestBody VideoCasset videoCasset){
+    public Video updateVideo(@RequestBody Video videoCasset){
         return service.save(videoCasset);
     }
 
