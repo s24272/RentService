@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
-@Table
+@Table(name = "books")
 @Entity
 public class Books {
 
@@ -20,12 +20,23 @@ public class Books {
 
     public Books() {
     }
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private Users user;
 
     public Books(int id, String title, String author, LocalDate productionData) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.productionData = productionData;
+    }
+
+    public Users getUser() {
+        return user;
+    }
+
+    public void setUser(Users user) {
+        this.user = user;
     }
 
     public int getId() {
@@ -59,4 +70,6 @@ public class Books {
     public void setProductionData(LocalDate productionData) {
         this.productionData = productionData;
     }
+
+
 }

@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
-@Table
+@Table(name = "games")
 @Entity
 public class Games {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +18,10 @@ public class Games {
     @Column 
     private LocalDate productionData;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private Users user;
+
 
     public Games() {
     }
@@ -29,6 +33,13 @@ public class Games {
         this.productionData = productionData;
     }
 
+    public Users getUser() {
+        return user;
+    }
+
+    public void setUser(Users user) {
+        this.user = user;
+    }
 
     public int getId() {
         return id;

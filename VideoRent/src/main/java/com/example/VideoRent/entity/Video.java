@@ -3,7 +3,7 @@ package com.example.VideoRent.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
-@Table
+@Table(name = "video")
 @Entity
 public class Video {
 
@@ -15,6 +15,10 @@ public class Video {
     @Column
     private LocalDate productionYear;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private Users user;
+
     public Video() {
     }
 
@@ -22,6 +26,14 @@ public class Video {
         this.id = id;
         this.title = title;
         this.productionYear = productionYear;
+    }
+
+    public Users getUser() {
+        return user;
+    }
+
+    public void setUser(Users user) {
+        this.user = user;
     }
 
     public int getId() {

@@ -38,6 +38,7 @@ public class GameService {
 
     @EventListener(ApplicationReadyEvent.class)
     public void fillDB(){
+
         save(new Games(1, "CounterStrike", GameType.FPS, LocalDate.of(2012,9,11)));
         save(new Games(2, "Witcher", GameType.RPG, LocalDate.of(2014,5,17)));
     }

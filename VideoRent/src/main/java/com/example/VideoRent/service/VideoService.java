@@ -1,6 +1,8 @@
 package com.example.VideoRent.service;
 
+import com.example.VideoRent.data.UserRepository;
 import com.example.VideoRent.data.VideoRepository;
+import com.example.VideoRent.entity.Users;
 import com.example.VideoRent.entity.Video;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -12,7 +14,6 @@ import java.util.Optional;
 
 @Service
 public class VideoService {
-
     private VideoRepository videoRepository;
     @Autowired
     public VideoService(VideoRepository videoRepository) {
